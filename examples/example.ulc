@@ -1,0 +1,32 @@
+K = \ x y . x
+S = \ f g x . f x (g x)
+I = S K K
+
+Dot = \ f g x . f (g x)
+Flip = \ f x y . f y x
+
+True = K
+Not = Flip
+False = Not True
+
+If = I
+
+Zero = \ s z . z
+Succ = \ n . \ s z . n s (s z)
+
+IsZero = \ n . n (K False) True
+
+Add = \ m n . \ s z . m s (n s) z
+Mul = \ m n . \ s z . m (n s) z
+Pow = \ m n . \ s z . n m s z
+
+One = Succ Zero
+Two = Succ One
+Three = Succ Two
+
+Tup = \ x y . \ p . p x y
+Fst = \ t . t K
+Snd = \ t . t (flip K)
+
+Fac = \ n . Snd (n (\ t . t (\ x y . Tup (Succ x) (Mul x y))) (Tup One One))
+
