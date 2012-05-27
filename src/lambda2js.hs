@@ -4,7 +4,7 @@ import Types
 import Parser ( source )
 
 import System.Environment ( getArgs )
-import System.IO ( stdout , stderr , hPutStr )
+import System.IO ( stdout , stderr , hPutStr , Handle )
 import Text.ParserCombinators.Parsec ( parse )
 
 main :: IO ()
@@ -32,6 +32,7 @@ jsRender = f where
     h (App m n) = h m ++ "(" ++ h n ++ ")"
     h (Abs v m) = "function(" ++ v ++ "){return " ++ h m ++ "}"
 
+usage :: Handle -> IO ()
 usage h = hPutStr h $ unlines
     [ "lambda2js - Savage compiler."
     , "Usage: lambda2js [infile [outfile]]"
