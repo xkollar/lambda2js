@@ -11,42 +11,10 @@ Project is open source (lincensed under GPL-3) and patches are welcome.
 
 ## Example
 
-In examples you can find [simple though nice example](examples/example.ulc):
+In examples you can find [simple though nice example](examples/example.ulc),
+that will get compiled into
 
-    K = \ x y . x
-    S = \ f g x . f x (g x)
-    I = S K K
     
-    Dot = \ f g x . f (g x)
-    Flip = \ f x y . f y x
-    
-    True = K
-    Not = Flip
-    False = Not True
-    
-    If = I
-    
-    Zero = \ s z . z
-    Succ = \ n . \ s z . n s (s z)
-    
-    IsZero = \ n . n (K False) True
-    
-    Add = \ m n . \ s z . m s (n s) z
-    Mul = \ m n . \ s z . m (n s) z
-    Pow = \ m n . \ s z . n m s z
-    
-    One = Succ Zero
-    Two = Succ One
-    Three = Succ Two
-    
-    Tup = \ x y . \ p . p x y
-    Fst = \ t . t K
-    Snd = \ t . t (flip K)
-    
-    Fac = \ n . Snd (n (\ t . t (\ x y . Tup (Succ x) (Mul x y))) (Tup One One))
-
-This will get compiled into
-
     K = function(x){return function(y){return x}}
     S = function(f){return function(g){return function(x){return f(x)(g(x))}}}
     I = S(K)(K)
@@ -69,6 +37,7 @@ This will get compiled into
     Fst = function(t){return t(K)}
     Snd = function(t){return t(flip(K))}
     Fac = function(n){return Snd(n(function(t){return t(function(x){return function(y){return Tup(Succ(x))(Mul(x)(y))}})})(Tup(One)(One)))}
+    
 
 which actually works. If you are using firefox, you can copy-paste this into scratch-pad (invoked through menu or with `Shift-F4`, append following
 and with `Ctrl-R`:
