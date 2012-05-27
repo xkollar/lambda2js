@@ -26,7 +26,7 @@ that will get compiled into
     Zero = function(s){return function(z){return z}}
     Succ = function(n){return function(s){return function(z){return n(s)(s(z))}}}
     IsZero = function(n){return n(K(False))(True)}
-    Add = function(m){return function(n){return function(s){return function(z){return m(s)(n(s))(z)}}}}
+    Add = function(m){return function(n){return function(s){return function(z){return m(s)(n(s)(z))}}}}
     Mul = function(m){return function(n){return function(s){return function(z){return m(n(s))(z)}}}}
     Pow = function(m){return function(n){return function(s){return function(z){return n(m)(s)(z)}}}}
     One = Succ(Zero)

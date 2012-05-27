@@ -16,7 +16,7 @@ Succ = \ n . \ s z . n s (s z)
 
 IsZero = \ n . n (K False) True
 
-Add = \ m n . \ s z . m s (n s) z
+Add = \ m n . \ s z . m s (n s z)
 Mul = \ m n . \ s z . m (n s) z
 Pow = \ m n . \ s z . n m s z
 
