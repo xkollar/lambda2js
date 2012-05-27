@@ -1,5 +1,4 @@
-Welcome to lambda2js
-====================
+# Welcome to lambda2js
 
 First thing to mention is, that lambda2js is meant mainly as fun project.
 So if you are not in mood, simply leave as this is nothing for you.
@@ -7,6 +6,10 @@ So if you are not in mood, simply leave as this is nothing for you.
 As you can guess just by looking at name, lambda2js is compiler
 that takes simple syntactically sugared Untyped lambda calculus and produces
 JavaScript code. Though this project is meant as fun, it actually works.
+
+Project is open source (lincensed under GPL-3) and patches are welcome.
+
+## Example
 
 In examples you can find simple though nice example:
 
