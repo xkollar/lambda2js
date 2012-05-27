@@ -1,12 +1,78 @@
-# Welcome to Gitit!
+Welcome to lambda2js
+====================
 
-This is the front page of your new gitit wiki.  You can edit this
-page by clicking on the "edit" tab at the top of the screen.
-For instructions on how to make a link to another wiki page, see [the
-Help page](Help#wiki-links). To create a new wiki page, just create a
-link to it and follow the link.
+First thing to mention is, that lambda2js is meant mainly as fun project.
+So if you are not in mood, simply leave as this is nothing for you.
 
-Help is always available through the "Help" link in the sidebar.
-More details on installing and configurating gitit are available
-in the [Gitit User's Guide]().
+As you can guess just by looking at name, lambda2js is compiler
+that takes simple syntactically sugared Untyped lambda calculus and produces
+JavaScript code. Though this project is meant as fun, it actually works.
+
+In examples you can find simple though nice example:
+
+    K = \ x y . x
+    S = \ f g x . f x (g x)
+    I = S K K
+    
+    Dot = \ f g x . f (g x)
+    Flip = \ f x y . f y x
+    
+    True = K
+    Not = Flip
+    False = Not True
+    
+    If = I
+    
+    Zero = \ s z . z
+    Succ = \ n . \ s z . n s (s z)
+    
+    IsZero = \ n . n (K False) True
+    
+    Add = \ m n . \ s z . m s (n s) z
+    Mul = \ m n . \ s z . m (n s) z
+    Pow = \ m n . \ s z . n m s z
+    
+    One = Succ Zero
+    Two = Succ One
+    Three = Succ Two
+    
+    Tup = \ x y . \ p . p x y
+    Fst = \ t . t K
+    Snd = \ t . t (flip K)
+    
+    Fac = \ n . Snd (n (\ t . t (\ x y . Tup (Succ x) (Mul x y))) (Tup One One))
+
+This will get compiled into
+
+    K = function(x){return function(y){return x}}
+    S = function(f){return function(g){return function(x){return f(x)(g(x))}}}
+    I = S(K)(K)
+    Dot = function(f){return function(g){return function(x){return f(g(x))}}}
+    Flip = function(f){return function(x){return function(y){return f(y)(x)}}}
+    True = K
+    Not = Flip
+    False = Not(True)
+    If = I
+    Zero = function(s){return function(z){return z}}
+    Succ = function(n){return function(s){return function(z){return n(s)(s(z))}}}
+    IsZero = function(n){return n(K(False))(True)}
+    Add = function(m){return function(n){return function(s){return function(z){return m(s)(n(s))(z)}}}}
+    Mul = function(m){return function(n){return function(s){return function(z){return m(n(s))(z)}}}}
+    Pow = function(m){return function(n){return function(s){return function(z){return n(m)(s)(z)}}}}
+    One = Succ(Zero)
+    Two = Succ(One)
+    Three = Succ(Two)
+    Tup = function(x){return function(y){return function(p){return p(x)(y)}}}
+    Fst = function(t){return t(K)}
+    Snd = function(t){return t(flip(K))}
+    Fac = function(n){return Snd(n(function(t){return t(function(x){return function(y){return Tup(Succ(x))(Mul(x)(y))}})})(Tup(One)(One)))}
+
+which actually works. If you are using firefox, you can copy-paste this into scratch-pad (invoked through menu or with `Shift-F4`, append following
+and with `Ctrl-R`:
+
+    sc = function(x){return x+1}
+    
+    toInt = function(n){return n(sc)(0)}
+    
+    alert( toInt ( Fac(Add(Three)(Two)) ) )
 
