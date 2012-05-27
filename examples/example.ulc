@@ -26,7 +26,7 @@ Three = Succ Two
 
 Tup = \ x y . \ p . p x y
 Fst = \ t . t K
-Snd = \ t . t (flip K)
+Snd = \ t . t (Flip K)
 
 Fac = \ n . Snd (n (\ t . t (\ x y . Tup (Succ x) (Mul x y))) (Tup One One))
 

@@ -14,7 +14,6 @@ Project is open source (lincensed under GPL-3) and patches are welcome.
 In examples you can find [simple though nice example](examples/example.ulc),
 that will get compiled into
 
-    
     K = function(x){return function(y){return x}}
     S = function(f){return function(g){return function(x){return f(x)(g(x))}}}
     I = S(K)(K)
@@ -35,16 +34,13 @@ that will get compiled into
     Three = Succ(Two)
     Tup = function(x){return function(y){return function(p){return p(x)(y)}}}
     Fst = function(t){return t(K)}
-    Snd = function(t){return t(flip(K))}
+    Snd = function(t){return t(Flip(K))}
     Fac = function(n){return Snd(n(function(t){return t(function(x){return function(y){return Tup(Succ(x))(Mul(x)(y))}})})(Tup(One)(One)))}
-    
 
 which actually works. If you are using firefox, you can copy-paste this into scratch-pad (invoked through menu or with `Shift-F4`, append following
 and with `Ctrl-R`:
 
     sc = function(x){return x+1}
-    
     toInt = function(n){return n(sc)(0)}
-    
     alert( toInt ( Fac(Add(Three)(Two)) ) )
 
