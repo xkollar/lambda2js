@@ -11,7 +11,7 @@ Project is open source (lincensed under GPL-3) and patches are welcome.
 
 ## Example
 
-In examples you can find simple though nice example:
+In examples you can find [simple though nice example](examples/example.ulc):
 
     K = \ x y . x
     S = \ f g x . f x (g x)
