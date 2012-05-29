@@ -48,7 +48,7 @@ that will get compiled into
 
 which actually works. You can play with thing. For example, combined
 with small [helper library for seamless integration](examples/helper.js),
-you can try computing (2+3)!.
+you can try computing $(2+3)!$.
 
     alert( funToInt ( Fac(Add(Three)(Two)) ) )
 
