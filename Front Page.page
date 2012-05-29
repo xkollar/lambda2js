@@ -23,6 +23,7 @@ was brought to light of general public.
 In examples you can find [simple though nice example](examples/example.ulc),
 that will get compiled into
 
+    ~~~ {.haskell .numberLines}
     K = function(x){return function(y){return x}}
     S = function(f){return function(g){return function(x){return f(x)(g(x))}}}
     I = S(K)(K)
@@ -45,6 +46,7 @@ that will get compiled into
     Fst = function(t){return t(K)}
     Snd = function(t){return t(Flip(K))}
     Fac = function(n){return Snd(n(function(t){return t(function(x){return function(y){return Tup(Succ(x))(Mul(x)(y))}})})(Tup(One)(One)))}
+    ~~~~
 
 which actually works. You can play with thing. For example, combined
 with small [helper library for seamless integration](examples/helper.js),
