@@ -23,30 +23,30 @@ was brought to light of general public.
 In examples you can find [simple though nice example](examples/example.ulc),
 that will get compiled into
 
-    ~~~ {.haskell .numberLines}
-    K = function(x){return function(y){return x}}
-    S = function(f){return function(g){return function(x){return f(x)(g(x))}}}
-    I = S(K)(K)
-    Dot = function(f){return function(g){return function(x){return f(g(x))}}}
-    Flip = function(f){return function(x){return function(y){return f(y)(x)}}}
-    True = K
-    Not = Flip
-    False = Not(True)
-    If = I
-    Zero = function(s){return function(z){return z}}
-    Succ = function(n){return function(s){return function(z){return n(s)(s(z))}}}
-    IsZero = function(n){return n(K(False))(True)}
-    Add = function(m){return function(n){return function(s){return function(z){return m(s)(n(s)(z))}}}}
-    Mul = function(m){return function(n){return function(s){return function(z){return m(n(s))(z)}}}}
-    Pow = function(m){return function(n){return function(s){return function(z){return n(m)(s)(z)}}}}
-    One = Succ(Zero)
-    Two = Succ(One)
-    Three = Succ(Two)
-    Tup = function(x){return function(y){return function(p){return p(x)(y)}}}
-    Fst = function(t){return t(K)}
-    Snd = function(t){return t(Flip(K))}
-    Fac = function(n){return Snd(n(function(t){return t(function(x){return function(y){return Tup(Succ(x))(Mul(x)(y))}})})(Tup(One)(One)))}
-    ~~~~
+~~~ {.haskell .numberLines}
+K = function(x){return function(y){return x}}
+S = function(f){return function(g){return function(x){return f(x)(g(x))}}}
+I = S(K)(K)
+Dot = function(f){return function(g){return function(x){return f(g(x))}}}
+Flip = function(f){return function(x){return function(y){return f(y)(x)}}}
+True = K
+Not = Flip
+False = Not(True)
+If = I
+Zero = function(s){return function(z){return z}}
+Succ = function(n){return function(s){return function(z){return n(s)(s(z))}}}
+IsZero = function(n){return n(K(False))(True)}
+Add = function(m){return function(n){return function(s){return function(z){return m(s)(n(s)(z))}}}}
+Mul = function(m){return function(n){return function(s){return function(z){return m(n(s))(z)}}}}
+Pow = function(m){return function(n){return function(s){return function(z){return n(m)(s)(z)}}}}
+One = Succ(Zero)
+Two = Succ(One)
+Three = Succ(Two)
+Tup = function(x){return function(y){return function(p){return p(x)(y)}}}
+Fst = function(t){return t(K)}
+Snd = function(t){return t(Flip(K))}
+Fac = function(n){return Snd(n(function(t){return t(function(x){return function(y){return Tup(Succ(x))(Mul(x)(y))}})})(Tup(One)(One)))}
+~~~~
 
 which actually works. You can play with thing. For example, combined
 with small [helper library for seamless integration](examples/helper.js),
