@@ -19,7 +19,7 @@ mySpace :: Parser Char
 mySpace = char ' '
 
 mySpaces :: Parser ()
-mySpaces = many1 mySpace >> return ()
+mySpaces = void $ many1 mySpace
 
 source :: Parser Source
 source = do
