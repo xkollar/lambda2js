@@ -1,4 +1,5 @@
-# Welcome to lambda2js
+Welcome to lambda2js
+====================
 
 First thing to mention is, that lambda2js is meant mainly as fun project.
 So if you are not in mood, simply leave as this is nothing for you.
@@ -9,7 +10,8 @@ JavaScript code. Though this project is meant as fun, it actually works.
 
 Project is open source (licensed under GPL-3) and patches are welcome.
 
-## Motivation
+Motivation
+----------
 
 Have you ever found yourselves writing JavaScript code and thinking like:
 "Oh my... How nice it would be to have this function with flipped arguments.
@@ -18,12 +20,13 @@ that will do what I need. In functional programming, I would simply use
 flip and that would be it!" Well, now is your time, as this project
 was brought to light of general public.
 
-## Example
+Example
+-------
 
 In examples you can find [simple though nice example](examples/example.ulc),
 that will get compiled into
 
-~~~ {.haskell .numberLines}
+~~~ { .javascript }
 K = function(x){return function(y){return x}}
 S = function(f){return function(g){return function(x){return f(x)(g(x))}}}
 I = S(K)(K)
@@ -50,24 +53,29 @@ Fac = function(n){return Snd(n(function(t){return t(function(x){return function(
 
 which actually works. You can play with thing. For example, combined
 with small [helper library for seamless integration](examples/helper.js),
-you can try computing $(2+3)!$.
+you can try computing `(2+3)!`.
 
-    alert( funToInt ( Fac(Add(Three)(Two)) ) )
+~~~ { .javascript }
+alert( funToInt ( Fac(Add(Three)(Two)) ) )
+~~~
 
 Flipping arguments can be as simple as
 
-   alert ( uncurry2(Flip(curry2(Math.pow)))(2,3) )
+~~~ { .javascript }
+alert ( uncurry2(Flip(curry2(Math.pow)))(2,3) )
+~~~
 
 ...and much more.
 
-## Origin
+Origin
+------
 
 I was playing with JavaScript the other day, pondering higher functions.
 Trying the usual stuff like [Church numerals](http://en.wikipedia.org/wiki/Church_encoding)
 and things like that. And I found myself under avalanche of JavaScript
 boilerplate. Just compare `function(x){return x}` and `\ x . x`.
 
-And then it occurred to me: this can be easily automated!. I can
+And then it occurred to me: this can be easily automated! I can
 write code I like and get code I need. And I sat down to my console
 and in just couple of moments I came with 10 commandm\^W\^Wthis little
 project. And here it is for everyone to enjoy.

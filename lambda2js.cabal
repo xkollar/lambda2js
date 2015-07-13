@@ -3,7 +3,7 @@ Version:             0.1
 Synopsis:            Untyped Lambda calculus to JavaScript compiler
 Description:         Simple though savage untyped Lambda calculus to JavaScript compiler.
                      I hope you will have same fun playing with it as I had writing it.
-Homepage:            https://patch-tag.com/r/mkollar/lambda2js/
+Homepage:            https://github.com/xkollar/lambda2js
 Stability:           experimental
 License:             GPL-3
 License-file:        LICENSE
