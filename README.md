@@ -56,13 +56,13 @@ with small [helper library for seamless integration](examples/helper.js),
 you can try computing `(2+3)!`.
 
 ~~~ { .javascript }
-alert( funToInt ( Fac(Add(Three)(Two)) ) )
+alert(funToInt(Fac(Add(Three)(Two))))
 ~~~
 
 Flipping arguments can be as simple as
 
 ~~~ { .javascript }
-alert ( uncurry2(Flip(curry2(Math.pow)))(2,3) )
+alert(uncurry2(Flip(curry2(Math.pow)))(2,3))
 ~~~
 
 ...and much more.
