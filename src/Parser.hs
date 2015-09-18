@@ -2,6 +2,7 @@ module Parser ( source ) where
 
 import Types
 
+import Control.Monad ( void )
 import Text.ParserCombinators.Parsec
 
 ndSepBy1 :: GenParser a b c -> GenParser a b d -> GenParser a b [c]

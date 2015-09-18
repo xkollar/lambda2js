@@ -27,5 +27,6 @@ Executable lambda2js
   Build-depends: haskell2010,
                  parsec >= 3
   Hs-source-dirs: src
+  Ghc-options: -Wall -fno-warn-unused-do-bind -Werror -O2
   Other-modules: Parser, Types
 
