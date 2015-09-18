@@ -4,7 +4,8 @@ Welcome to lambda2js
 Before you get any further: lambda2js is mainly a fun project.
 So if you are not in the mood simply leave as it is not for you.
 
-If you need something serious, try [PureScript](http://www.purescript.org/).
+If you need something serious, try [PureScript](http://www.purescript.org/),
+[Haste](http://haste-lang.org/), or [elm](http://elm-lang.org/).
 
 As you can guess just by looking at name, lambda2js is compiler
 that takes simple syntactically sugared untyped lambda calculus and produces
