@@ -1,9 +1,9 @@
 module Parser (source) where
 
-import Types
-
 import Control.Monad (void)
 import Text.ParserCombinators.Parsec
+
+import Types
 
 ndSepBy1 :: GenParser a b c -> GenParser a b d -> GenParser a b [c]
 ndSepBy1 p sep = do
