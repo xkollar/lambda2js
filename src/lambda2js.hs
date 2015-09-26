@@ -1,11 +1,11 @@
-module Main ( main ) where
+module Main (main) where
 
 import Types
-import Parser ( source )
+import Parser (source)
 
-import System.Environment ( getArgs )
-import System.IO ( stdout , stderr , hPutStr , Handle )
-import Text.ParserCombinators.Parsec ( parse )
+import System.Environment (getArgs)
+import System.IO (stdout, stderr, hPutStr, Handle)
+import Text.ParserCombinators.Parsec (parse)
 
 main :: IO ()
 main = do
