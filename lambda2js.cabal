@@ -2,7 +2,7 @@
 -- documentation, see http://haskell.org/cabal/users-guide/
 
 -- The name of the package.
-Name:                lambda2js
+name:               lambda2js
 
 -- The package version.  See the Haskell package versioning policy (PVP)
 -- for standards guiding when and how versions should be incremented.
@@ -10,53 +10,53 @@ Name:                lambda2js
 -- PVP summary:     +-+------- breaking API changes
 --                  | | +----- non-breaking API additions
 --                  | | | +--- code changes with no API change
-Version:             0.1.0.0
+version:            0.1.0.0
 
 -- A short (one-line) description of the package.
-Synopsis:            Untyped Lambda calculus to JavaScript compiler
+synopsis:           Untyped Lambda calculus to JavaScript compiler
 
 -- A longer description of the package.
-Description:         Simple though savage untyped Lambda calculus to JavaScript compiler.
-                     I hope you will have same fun playing with it as I had writing it.
+description:        Simple though savage untyped Lambda calculus to JavaScript compiler.
+                    I hope you will have same fun playing with it as I had writing it.
 
-Homepage:            https://github.com/xkollar/lambda2js
-Stability:           experimental
+homepage:           https://github.com/xkollar/lambda2js
+stability:          experimental
 
 -- The license under which the package is released.
-License:             GPL-3
+license:            GPL-3
 
 -- The file containing the license text.
-License-file:        LICENSE
+license-file:       LICENSE
 
 -- The package author(s).
-Author:              Matej Kollar <208115@mail.muni.cz>
+author:             Matej Kollar <208115@mail.muni.cz>
 
 
 -- An email address to which users can send suggestions, bug reports, and
 -- patches.
-Maintainer:          208115@mail.muni.cz
+maintainer:         208115@mail.muni.cz
 
 -- A copyright notice.
 -- Copyright:
 
-Category:            Compiler
+category:           Compiler
 
-Build-type:          Simple
+build-type:         Simple
 
 -- Constraint on the version of Cabal needed to build this package.
-Cabal-version:       >= 1.4
+cabal-version:      >= 1.4
 
-Extra-source-files:  README.md
+extra-source-files: README.md
 
-Executable lambda2js
-  Main-is: lambda2js.hs
-
-  -- Other library packages from which modules are imported.
-  Build-depends:     base ==4.5.*, parsec >=3
-
-  -- Directories containing source files.
-  Hs-source-dirs: src
-  Ghc-options: -Wall -fno-warn-unused-do-bind -O2
+executable lambda2js
+  main-is: lambda2js.hs
 
   -- Modules included in this executable, other than Main.
-  Other-modules: Parser, Types
+  other-modules:    Parser, Types
+
+  -- Other library packages from which modules are imported.
+  build-depends:    base ==4.5.*, parsec >=3
+
+  -- Directories containing source files.
+  hs-source-dirs:   src
+  ghc-options:      -Wall -fno-warn-unused-do-bind -O2
