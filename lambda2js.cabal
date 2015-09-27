@@ -10,7 +10,7 @@ name:               lambda2js
 -- PVP summary:     +-+------- breaking API changes
 --                  | | +----- non-breaking API additions
 --                  | | | +--- code changes with no API change
-version:            0.1.0.0
+version:            0.1.0.1
 
 -- A short (one-line) description of the package.
 synopsis:           Untyped Lambda calculus to JavaScript compiler
@@ -66,3 +66,8 @@ executable lambda2js
 source-repository head
   type:     git
   location: https://github.com/xkollar/lambda2js.git
+
+source-repository this
+  type:     git
+  location: https://github.com/xkollar/lambda2js.git
+  tag:      lambda2js-0.1.0.1
